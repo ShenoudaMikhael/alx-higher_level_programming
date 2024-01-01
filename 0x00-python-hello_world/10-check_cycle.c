@@ -12,11 +12,13 @@ int check_cycle(listint_t *list)
 	if (list == NULL || list->next == NULL)
 		return (0);
 	head = list;
-	tail = head->next;
 
-	do
+	while (head != NULL)
 	{
-
+		tail = head->next;
+		if (tail == NULL)
+			return (0);
+			
 		for (; head != tail && tail != NULL;)
 		{
 
@@ -26,12 +28,8 @@ int check_cycle(listint_t *list)
 			}
 			tail = tail->next;
 		}
-		if (head->next == NULL || head == NULL)
-			return (0);
 		head = head->next;
-
-
-	} while (head != list);
+	}
 
 	return (0);
 }
