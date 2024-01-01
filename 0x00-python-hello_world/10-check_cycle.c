@@ -13,15 +13,25 @@ int check_cycle(listint_t *list)
 		return (0);
 	head = list;
 	tail = head->next;
-	for (; head != tail && tail != NULL;)
+
+	do
 	{
 
-		if (head == tail || head == tail->next)
+		for (; head != tail && tail != NULL;)
 		{
-			return (1);
+
+			if (head == tail || head == tail->next)
+			{
+				return (1);
+			}
+			tail = tail->next;
 		}
-		tail = tail->next;
-	}
+		if (head->next == NULL || head == NULL)
+			return (0);
+		head = head->next;
+
+
+	} while (head != list);
 
 	return (0);
 }
