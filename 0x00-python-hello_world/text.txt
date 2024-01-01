@@ -1,0 +1,24 @@
+0x562618a6e360 0x562618a6e380
+0x562618a6e340 0x562618a6e380
+0x562618a6e320 0x562618a6e380
+0x562618a6e300 0x562618a6e380
+0x562618a6e2e0 0x562618a6e380
+0x562618a6e2c0 0x562618a6e380
+0x562618a6e2a0 0x562618a6e380
+Linked list has no cycle
+0x562618a6e360 0x562618a6e380
+0x562618a6e340 0x562618a6e380
+0x562618a6e320 0x562618a6e380
+0x562618a6e300 0x562618a6e380
+Linked list has no cycle
+
+
+for (; head != tail && tail != NULL;)
+	{
+
+		if (head == tail || head == tail->next)
+		{
+			return (1);
+		}
+		tail = tail->next;
+	}
