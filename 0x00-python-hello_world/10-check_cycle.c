@@ -12,10 +12,11 @@ int check_cycle(listint_t *list)
 	if (list == NULL || list->next == NULL)
 		return (0);
 	head = list;
-	tail = list->next;
+	tail = head->next;
 	for (; head != tail && tail != NULL;)
 	{
-		if (head == tail->next)
+
+		if (head == tail || head == tail->next)
 		{
 			return (1);
 		}
