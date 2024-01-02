@@ -9,4 +9,7 @@ def islower(c):
     Returns:
         bool: True if the character is lowercase, False otherwise.
     """
-    return True if ord(c) in range(97, 123) else False
+    if ord(c) in range(97, 123):
+        return True
+    else:
+        return False
