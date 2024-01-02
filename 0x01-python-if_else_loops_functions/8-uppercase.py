@@ -13,4 +13,4 @@ def uppercase(str):
     for i, s in enumerate(str):
         str1 += chr(
             ord(str[i]) - 32) if ord(str[i]) in range(97, 123) else str[i]
-    print(str1)
+    print("{}".format(str1))
