@@ -9,10 +9,11 @@ def uppercase(str):
     Returns:
         None
     """
-    str1 = ""
-    for i, s in enumerate(str):
-        if ord(str[i]) in range(97, 123):
-            str1 += chr(ord(str[i]) - 32)
-        else:
-            str1 += str[i]
-    print(str1)
+
+    for s in str:
+        if ord(s) in range(97, 123):
+            s = chr(ord(s) - 32)
+
+        print("{}".format(s), end="")
+
+    print("")
