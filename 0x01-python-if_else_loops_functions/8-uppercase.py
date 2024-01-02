@@ -1,17 +1,16 @@
 #!/usr/bin/python3
-
-def uppercase(str1):
+def uppercase(str):
     """
-    convert str1 to uppercaseand print.
+    convert str to uppercaseand print.
 
     Args:
-        str1 (str1): text.
+        str (str): text.
 
     Returns:
         None
     """
-    for s in str1:
-        if ord(s) >= 97 and ord(s) <= 122:
-            s = chr(ord(s) - 32)
-        print("{}".format(s), end="")
-    print("".format())
+    str1 = ""
+    for i, s in enumerate(str):
+        str1 += chr(
+            ord(str[i]) - 32) if ord(str[i]) in range(97, 123) else str[i]
+    print(str1)
