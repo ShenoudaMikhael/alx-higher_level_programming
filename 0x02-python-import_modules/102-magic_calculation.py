@@ -12,7 +12,7 @@ def magic_calculation(a, b):
             c = add(c, i)
         return c
     else:
-        sub(a, b)
+        return sub(a, b)
 
 
 dis.dis(magic_calculation)
