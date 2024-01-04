@@ -11,7 +11,8 @@ def magic_calculation(a, b):
         for i in range(90):
             c = add(c, i)
         return c
-    sub(a, b)
+    else:
+        sub(a, b)
 
 
 dis.dis(magic_calculation)
