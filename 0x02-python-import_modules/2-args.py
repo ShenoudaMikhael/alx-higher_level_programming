@@ -4,9 +4,9 @@ if __name__ == "__main__":
     import sys
 
     print(
-        "{0} argument{1}{2}".format(
+        "{0} {1}{2}".format(
             len(sys.argv) - 1,
-            "s" if len(sys.argv) > 2 else "",
+            "argument" if len(sys.argv) == 2 else "arguments",
             ":" if len(sys.argv) > 2 else ".",
         )
     )
