@@ -7,7 +7,7 @@ if __name__ == "__main__":
         "{0} {1}{2}".format(
             len(sys.argv) - 1,
             "argument" if len(sys.argv) == 2 else "arguments",
-            ":" if len(sys.argv) > 2 else ".",
+            ":" if len(sys.argv) != 1 else ".",
         )
     )
     for i, v in list(enumerate(sys.argv))[1:]:
