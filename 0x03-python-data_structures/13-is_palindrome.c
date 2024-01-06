@@ -9,6 +9,7 @@ int is_palindrome(listint_t **head)
 {
 	int list_len = 1, i, j;
 	listint_t *tmp, *rev_tmp;
+
 	tmp = *head;
 	rev_tmp = *head;
 
