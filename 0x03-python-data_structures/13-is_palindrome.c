@@ -7,10 +7,9 @@
  */
 int is_palindrome(listint_t **head)
 {
-	int list_len = 1, i, j;
-	listint_t *tmp, *rev_tmp;
+	int list_len = 1;
+	listint_t *tmp;
 	tmp = *head;
-	rev_tmp = *head;
 
 	if (head == NULL || *head == NULL)
 		return (1);
@@ -21,7 +20,6 @@ int is_palindrome(listint_t **head)
 		tmp = tmp->next;
 	}
 	tmp = *head;
-
 
 	return (1);
 }
