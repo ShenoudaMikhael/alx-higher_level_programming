@@ -10,10 +10,7 @@ int check(listint_t *head, listint_t *tail)
 {
 	int q = 1;
 
-	if (tail->next == NULL)
-	{
-	}
-	else
+	if (tail->next != NULL)
 	{
 
 		q = check(head, tail->next);
@@ -22,7 +19,6 @@ int check(listint_t *head, listint_t *tail)
 			return (0);
 		}
 		*head = *head->next;
-		printf("head:%d  end tail:%d\n", head->n, tail->n);
 		q = head->n == tail->n;
 	}
 
@@ -47,16 +43,10 @@ int is_palindrome(listint_t **head)
 	if (head == NULL || *head == NULL)
 		return (1);
 
-	while (tmp->next)
-	{
-		list_len++;
-		tmp = tmp->next;
-	}
+ 
 	tmp = *head;
 	qq = *head;
-	printf("===================\n");
 	list_len = check(qq, tmp);
-	printf("result = %d\n", list_len);
 
 	return (list_len);
 }
