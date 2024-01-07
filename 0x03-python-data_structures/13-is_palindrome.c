@@ -1,5 +1,29 @@
 #include "lists.h"
 #include <stdio.h>
+
+int check(listint_t *head, listint_t *tail)
+{
+	int q = 1;
+
+	if (tail->next == NULL)
+	{
+	}
+	else
+	{
+
+		q = check(head, tail->next);
+		if (q == 0)
+		{
+			return (0);
+		}
+		*head = *head->next;
+		printf("head:%d  end tail:%d\n", head->n, tail->n);
+		q = head->n == tail->n;
+	}
+
+	return (q);
+}
+
 /**
  * is_palindrome - detect if list is palindrome
  * @head: linked list
@@ -7,11 +31,13 @@
  */
 int is_palindrome(listint_t **head)
 {
-	int list_len = 1, i, j;
-	listint_t *tmp, *rev_tmp;
-
+	int list_len = 1;
+	/*int  i, j;*/
+	listint_t *tmp;
+	listint_t *qq;
+	/*listint_t *rev_tmp;*/
 	tmp = *head;
-	rev_tmp = *head;
+	/*rev_tmp = *head;*/
 
 	if (head == NULL || *head == NULL)
 		return (1);
@@ -22,19 +48,10 @@ int is_palindrome(listint_t **head)
 		tmp = tmp->next;
 	}
 	tmp = *head;
-	for (i = 0; i < list_len / 2; i++)
-	{
-		rev_tmp = *head;
-		for (j = 0; j < list_len - i - 1; j++)
-		{
-			rev_tmp = rev_tmp->next;
-		}
-		if (rev_tmp->n != tmp->n)
-		{
-			return (0);
-		}
-		tmp = tmp->next;
-	}
+	qq = *head;
+	printf("===================\n");
+	list_len = check(qq, tmp);
+	printf("result = %d\n", list_len);
 
-	return (1);
+	return (list_len);
 }
