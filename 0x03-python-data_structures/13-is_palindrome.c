@@ -1,6 +1,11 @@
 #include "lists.h"
 #include <stdio.h>
-
+/**
+ * check - check list if palindrome
+ * @head: start
+ * @tail: end
+ * Return: 0 or 1
+ */
 int check(listint_t *head, listint_t *tail)
 {
 	int q = 1;
