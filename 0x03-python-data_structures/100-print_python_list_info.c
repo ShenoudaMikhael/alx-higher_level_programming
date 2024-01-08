@@ -1,4 +1,5 @@
-#include "python3.11/Python.h"
+#include "listobject.h"
+#include "object.h"
 /**
  * print_python_list_info - print oython list info
  * @p: list
