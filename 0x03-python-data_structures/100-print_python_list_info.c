@@ -12,7 +12,7 @@ void print_python_list_info(PyObject *p)
 	printf("[*] Allocated = %ld\n", ((PyListObject *)p)->allocated);
 	for (i = 0; i < PyList_Size(p); i++)
 	{
-		 
+
 		printf("Element %ld: %s\n", i, Py_TYPE(PyList_GetItem(p, i))->tp_name);
 	}
 }
