@@ -3,5 +3,5 @@
 
 def square_matrix_simple(matrix=[]):
     """return square of matrix"""
-
-    return [[row[i] ** 2 for i in range(len(row))] for row in matrix]
+    if len(matrix) > 0:
+        return [[row[i] ** 2 for i in range(len(row))] for row in matrix]
