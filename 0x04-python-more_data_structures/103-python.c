@@ -44,7 +44,7 @@ void print_python_list(PyObject *p)
  */
 void print_python_bytes(PyObject *p)
 {
-	char i, size;
+	unsigned char i, size;
 	PyBytesObject *bytes = (PyBytesObject *)p;
 
 	printf("[.] bytes object info\n");
