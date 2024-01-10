@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
+    if not roman_string:
+        return 0
     num = 0
     for i, l in enumerate(roman_string):
         if roman_string[i] == "I":
