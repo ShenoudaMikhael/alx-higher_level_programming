@@ -2,11 +2,13 @@
 def safe_print_list_integers(my_list=[], x=0):
     z = 0
     try:
-        for i in my_list[x:]:
-            if isinstance(i, int):
-                print("{:d}".format(i))
+        for i in range(x):
+            if isinstance(my_list[i], int):
+                print("{:d}".format(my_list[i]), end="")
                 z += 1
-    except Exception as err:
-        print("{}".format(err))
-        return z
+        print("")
+
+    except IndexError as e:
+        raise e
+
     return z
