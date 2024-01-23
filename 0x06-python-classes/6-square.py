@@ -12,12 +12,7 @@ class Square:
             raise ValueError("size must be >= 0")
         self.__size = size
 
-        if (
-            (not isinstance(position, tuple))
-            or (not isinstance(position[0], int))
-            or (not isinstance(position[1], int))
-            or (position[0] < 0 or position[1] < 0)
-        ):
+        if not all(isinstance(x, int) and x > 0 for x in position):
             raise TypeError("position must be a tuple of 2 positive integers")
 
         self.__position = position
@@ -28,12 +23,7 @@ class Square:
 
     @position.setter
     def position(self, value):
-        if (
-            (not isinstance(value, tuple))
-            or (not isinstance(value[0], int))
-            or (not isinstance(value[1], int))
-            or (value[0] < 0 or value[1] < 0)
-        ):
+        if not all(isinstance(x, int) and x > 0 for x in value):
             raise TypeError("position must be a tuple of 2 positive integers")
 
         self.__position = value
@@ -47,7 +37,7 @@ class Square:
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         elif value < 0:
-            raise ValueError("size ust be >= 0")
+            raise ValueError("size must be >= 0")
         self.__size = value
 
     def area(self):
