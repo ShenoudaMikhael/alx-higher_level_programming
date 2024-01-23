@@ -5,9 +5,9 @@
 class Node:
     """singly list class node"""
 
-    def __init__(self, data, node=None) -> None:
+    def __init__(self, data, next_node=None) -> None:
         self.__data = data
-        self.__node = node
+        self.__node = next_node
 
     @property
     def data(self):
