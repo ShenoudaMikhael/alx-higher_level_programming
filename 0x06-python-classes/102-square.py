@@ -30,3 +30,7 @@ class Square:
     def __eq__(self, __value: object) -> bool:
         if isinstance(__value, Square):
             return self.size == __value.size
+
+    def __ne__(self, __value: object) -> bool:
+        if isinstance(__value, Square):
+            return self.size != __value.size
