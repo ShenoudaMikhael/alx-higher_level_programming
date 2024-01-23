@@ -42,11 +42,11 @@ class Square:
         return self.__size**2
 
     def my_print(self):
-        for _ in range(self.__position[1]):
-            print("")
         if self.size == 0:
             print("")
             return
+        for _ in range(self.__position[1]):
+            print("")
         for i in range(self.size):
             for _ in range(self.__position[0]):
                 print(" ", end="")
