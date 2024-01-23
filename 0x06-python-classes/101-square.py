@@ -5,8 +5,6 @@
 class Square:
     """Empty Sqaure Class"""
 
-    my_string = ""
-
     def __init__(self, size=0, position=(0, 0)):
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
@@ -50,39 +48,18 @@ class Square:
     def my_print(self):
         if self.size == 0:
             print("")
-            Square.my_string += "\n"
-            return
+            return ""
         for _ in range(self.__position[1]):
             print("")
-            Square.my_string += "\n"
-
         for _ in range(self.size):
             for _ in range(self.__position[0]):
                 print(" ", end="")
-                Square.my_string += " "
 
             for _ in range(self.size):
                 print("#", end="")
-                Square.my_string += "#"
-
             print("")
-            Square.my_string += "\n"
 
     def __str__(self) -> str:
-        Square.my_string = ""
-        if self.size == 0:
-            Square.my_string += "\n"
-            return
-        for _ in range(self.__position[1]):
-            Square.my_string += "\n"
-
-        for _ in range(self.size):
-            for _ in range(self.__position[0]):
-                Square.my_string += " "
-
-            for _ in range(self.size):
-                Square.my_string += "#"
-
-            Square.my_string += "\n"
-
-        return Square.my_string
+        if self.__size != 0:
+            self.my_print()
+        return ""
