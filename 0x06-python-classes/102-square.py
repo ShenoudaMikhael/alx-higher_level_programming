@@ -34,3 +34,19 @@ class Square:
     def __ne__(self, __value: object) -> bool:
         if isinstance(__value, Square):
             return self.size != __value.size
+
+    def __le__(self, __value: object) -> bool:
+        if isinstance(__value, Square):
+            return self.size <= __value.size
+
+    def __lt__(self, __value: object) -> bool:
+        if isinstance(__value, Square):
+            return self.size < __value.size
+
+    def __ge__(self, __value: object) -> bool:
+        if isinstance(__value, Square):
+            return self.size >= __value.size
+
+    def __gt__(self, __value: object) -> bool:
+        if isinstance(__value, Square):
+            return self.size >= __value.size
