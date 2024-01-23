@@ -49,4 +49,4 @@ class Square:
 
     def __gt__(self, __value: object) -> bool:
         if isinstance(__value, Square):
-            return self.area() >= __value.area()
+            return self.area() > __value.area()
