@@ -1,6 +1,8 @@
 #!/usr/bin/python3
+"""square module docs"""
+
+
 class Square:
     """Empty Sqaure Class"""
 
-    def __init__(self):
-        pass
+    pass
