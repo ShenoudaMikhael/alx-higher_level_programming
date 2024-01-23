@@ -65,4 +65,4 @@ class Square:
     def __str__(self) -> str:
         if self.__size != 0:
             self.my_print()
-        return "\n"
+        return ""
