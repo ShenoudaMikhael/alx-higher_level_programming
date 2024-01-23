@@ -54,15 +54,16 @@ class SinglyLinkedList:
                     tmp = tmp.next_node
                 else:
                     break
+
             n.next_node = tmp.next_node
             tmp.next_node = n
 
     def __str__(self):
         tmp = self.__head
-        while tmp.next_node is not None:
+        while tmp is not None:
             print(
                 "{}".format(tmp.data),
-                end="\n" if tmp.next_node.next_node is not None else "",
+                end="\n" if tmp.next_node is not None else "",
             )
             tmp = tmp.next_node
         return ""
