@@ -50,7 +50,7 @@ class Square:
             return
         for i in range(self.size):
             for _ in range(pos_x):
-                print("")
+                print(" ", end="")
 
             for j in range(self.size):
                 print("#", end="")
