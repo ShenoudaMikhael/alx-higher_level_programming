@@ -6,7 +6,11 @@ class Node:
     """singly list class node"""
 
     def __init__(self, data, next_node=None) -> None:
+        if not isinstance(data, int):
+            raise TypeError("data must be an integer")
         self.__data = data
+        if not isinstance(next_node, Node) and next_node is not None:
+            raise TypeError("next_node must be a Node object")
         self.__node = next_node
 
     @property
