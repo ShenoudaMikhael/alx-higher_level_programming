@@ -1,0 +1,14 @@
+#!/usr/bin/python3
+
+
+def text_indentation(text):
+    if not isinstance(text, str):
+        raise TypeError("text must be a string")
+    new_text = ""
+    for _, l in enumerate(text):
+        new_text += l
+
+        if l in ".?:":
+            new_text += "\n\n\n"
+
+    print("".join(new_text.split("\n ")), end="")

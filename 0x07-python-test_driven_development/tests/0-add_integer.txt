@@ -1,0 +1,23 @@
+>>> add_integer = __import__('0-add_integer').add_integer
+>>> add_integer(100, 50)
+150
+>>> add_integer(2, 3)
+5
+>>> add_integer(5)
+103
+>>> add_integer(-10, 5)
+-5
+>>> add_integer(10, -5)
+5
+>>> add_integer(3.14, 2.5)
+5
+>>> add_integer(7, 2.5)
+9
+>>> add_integer()
+Traceback (most recent call last):
+...
+TypeError: add_integer() missing 1 required positional argument: 'a'
+>>> add_integer('10', 5)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
