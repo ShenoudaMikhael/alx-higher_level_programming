@@ -54,6 +54,8 @@ class Rectangle:
         return 2 * (self.__height + self.__width)
 
     def __str__(self) -> str:
+        if self.__height == 0 or self.__width == 0:
+            return ""
         for h in range(self.__height):
             for w in range(self.__width):
                 print("#", end="")
@@ -61,8 +63,10 @@ class Rectangle:
         return ""
 
     def __repr__(self) -> str:
-        for h in range(self.__height):
-            for w in range(self.__width):
+        if self.__height == 0 or self.__width == 0:
+            return ""
+        for _ in range(self.__height):
+            for __ in range(self.__width):
                 print("#", end="")
             print("")
         return ""
