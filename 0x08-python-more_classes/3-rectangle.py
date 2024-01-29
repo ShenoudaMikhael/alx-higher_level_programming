@@ -56,18 +56,21 @@ class Rectangle:
     def __str__(self) -> str:
         if self.__height == 0 or self.__width == 0:
             return ""
+        r = ""
         for _ in range(self.__height):
             for __ in range(self.__width):
-                print("#", end="")
-            print("", end="" if _ >= self.__height - 1 else None)
+                r += "#"
+            r += "" if _ >= self.__height - 1 else "\n"
 
-        return ""
+        return r
 
     def __repr__(self) -> str:
         if self.__height == 0 or self.__width == 0:
             return ""
+
+        r = ""
         for _ in range(self.__height):
             for __ in range(self.__width):
-                print("#", end="")
-            print("", end="" if _ >= self.__height - 1 else None)
-        return ""
+                r += "#"
+            r += "" if _ >= self.__height - 1 else "\n"
+        return r
