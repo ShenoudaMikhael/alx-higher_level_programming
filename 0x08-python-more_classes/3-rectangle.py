@@ -56,10 +56,11 @@ class Rectangle:
     def __str__(self) -> str:
         if self.__height == 0 or self.__width == 0:
             return ""
-        for h in range(self.__height):
-            for w in range(self.__width):
+        for _ in range(self.__height):
+            for __ in range(self.__width):
                 print("#", end="")
-            print("")
+            print("", end="" if _ >= self.__height - 1 else None)
+
         return ""
 
     def __repr__(self) -> str:
