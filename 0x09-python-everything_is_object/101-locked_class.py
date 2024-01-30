@@ -12,4 +12,4 @@ class LockedClass:
 
     def __setattr__(self, name, value):
         if not name != "first_name":
-            raise AttributeError
+            raise AttributeError("object has no attribute 'last_name'")
