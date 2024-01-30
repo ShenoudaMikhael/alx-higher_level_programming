@@ -10,6 +10,4 @@ class LockedClass:
     and provides a lock method to acquire the lock.
     """
 
-    def __setattr__(self, name, value):
-        if not name != "first_name":
-            raise AttributeError("object has no attribute 'last_name'")
+    __slots__ = ['first_name']
