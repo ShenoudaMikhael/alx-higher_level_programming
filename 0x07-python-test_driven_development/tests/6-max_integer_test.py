@@ -17,6 +17,11 @@ class TestMaxInteger(unittest.TestCase):
         Tests the function max_integer() with different inputs.
         """
         self.assertEqual(max_integer([1, 2, 3, 4]), 4)
+        self.assertEqual(max_integer([5, 2, 3, 4]), 5)
+        self.assertEqual(max_integer([5, 7, 4]), 7)
+        self.assertEqual(max_integer([5, -2, 3, 4]), 5)
+        self.assertEqual(max_integer([-5, -2, -3, -4]), -2)
+        self.assertEqual(max_integer([5]), 5)
 
     def test_none_list(self):
         """
