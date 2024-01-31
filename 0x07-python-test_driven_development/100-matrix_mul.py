@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+matrix multiplication module
+"""
+
+
 def matrix_mul(m_a, m_b):
     """
     Multiplies two matrices.
@@ -20,27 +25,19 @@ def matrix_mul(m_a, m_b):
     if not all([isinstance(x, list) for x in m_b]):
         raise TypeError("m_b must be a list of lists")
     if not all(
-        [
-            isinstance(x, int)
-            or isinstance(x, float)
-            for row in m_a for x in row
-            ]
+        [isinstance(x, int) or isinstance(x, float) for row in m_a for x in row]
     ):
         raise TypeError("m_a should contain only integers or floats")
     if not all(
-        [
-            isinstance(x, int)
-            or isinstance(x, float)
-            for row in m_b for x in row
-            ]
+        [isinstance(x, int) or isinstance(x, float) for row in m_b for x in row]
     ):
         raise TypeError("m_b should contain only integers or floats")
 
-    for _,row in enumerate(m_a):
+    for _, row in enumerate(m_a):
         if len(m_a[0]) != len(row):
             raise TypeError("each row of m_a must be of the same size")
 
-    for _,row in enumerate(m_b):
+    for _, row in enumerate(m_b):
         if len(m_b[0]) != len(row):
             raise TypeError("each row of m_b must be of the same size")
 
