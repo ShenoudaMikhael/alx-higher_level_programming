@@ -20,6 +20,6 @@ def add_attribute(obj: object, name: str, value) -> None:
         None: Does not return any value.
     """
     if hasattr(obj, "__dict__") == False:
-        raise TypeError("Can't add new attribute")
+        raise TypeError("[TypeError] can't add new attribute")
 
     setattr(obj, name, value)
