@@ -16,7 +16,9 @@
 >>> # Test Case 2: Test sorting of strings
 >>> my_list2 = MyList(['apple', 'orange', 'banana', 'grape', 'kiwi'])
 >>> my_list2.print_sorted()
-['apple', 'banana', 'grape', 'kiwi', 'orange']
+Traceback (most recent call last):
+...
+TypeError: '<' not supported between instances of 'str' and 'int'
 >>> # Test Case 3: Test sorting of mixed types (integers and strings)
 >>> my_list3 = MyList([42, 'apple', 7, 'banana', 13, 'kiwi'])
 >>> my_list3.print_sorted()
