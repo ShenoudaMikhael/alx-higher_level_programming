@@ -1,16 +1,13 @@
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 >>> # Test Case 1: Test area() method (not implemented)
 >>> base_geometry = BaseGeometry()
->>> try:
-...     base_geometry.area()
-... except Exception as e:
-...     str(e)
-'area() is not implemented'
-
+>>> base_geometry.area()
+Traceback (most recent call last):
+...
+Exception: area() is not implemented
 >>> # Test Case 2: Test integer_validator() with valid input
 >>> base_geometry = BaseGeometry()
 >>> base_geometry.integer_validator('side_length', 5)  # No exception should be raised
-
 >>> # Test Case 3: Test integer_validator() with invalid input (non-integer)
 >>> base_geometry = BaseGeometry()
 >>> base_geometry.integer_validator('side_length', 'invalid')
