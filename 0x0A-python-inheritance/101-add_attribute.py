@@ -1,17 +1,10 @@
 #!/usr/bin/python3
-"""add attribute module with one function"""
+"""Class declaration"""
 
 
 def add_attribute(obj, name, value):
-    """
-    add attribute function
-    args:
-        obj: object
-        name: name
-        value: value
-    return:
-        none
-    """
-    if hasattr(obj, "__dict__") == False:
+    """adds a new attribute to an object"""
+    if "__dict__" not in dir(obj):
         raise TypeError("can't add new attribute")
+
     setattr(obj, name, value)
