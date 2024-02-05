@@ -1,25 +1,18 @@
 #!/usr/bin/python3
-""" 
-add attribute module with one function
-"""
+""" add attribute module with one function"""
 
 
-def add_attribute(obj: object, name: str, value) -> None:
+def add_attribute(obj, name, value):
     """
-    Add an attribute to an object.
-
-    Args:
-        obj (object): The object to which the attribute will be added.
-        name (str): The name of the attribute.
-        value: The value of the attribute.
-
-    Raises:
-        TypeError: If the object does not have a __dict__ attribute.
-
-    Returns:
-        None: Does not return any value.
+    add attribute function
+    args:
+        obj: object
+        name: name
+        value: value
+    return:
+        NONE
     """
     if hasattr(obj, "__dict__") == False:
-        raise TypeError("[TypeError] can't add new attribute")
+        raise TypeError("can't add new attribute")
 
     setattr(obj, name, value)
