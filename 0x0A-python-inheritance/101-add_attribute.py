@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""add attribute module"""
+"""add attribute module with one function"""
 
 
 def add_attribute(obj, name, value):
