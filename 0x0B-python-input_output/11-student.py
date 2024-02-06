@@ -27,9 +27,5 @@ class Student:
 
     def reload_from_json(self, json):
 
-        if not isinstance(json, dict):
-            raise ValueError("Input must be a dictionary")
-
-        self.first_name = json["first_name"]
-        self.last_name = json["last_name"]
-        self.age = json["age"]
+        for k, v in json:
+            setattr(self, k, v)
