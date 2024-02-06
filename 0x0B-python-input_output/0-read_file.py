@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""Read File Module """
+"""Read File Module"""
+
+
 def read_file(filename=""):
     """
     Reads the contents of a file and prints it to the console.
