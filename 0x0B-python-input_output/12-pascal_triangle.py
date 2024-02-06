@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+"""Pascal Triangle Module"""
 
 def pascal_triangle(n):
     """pascal trinagle"""
