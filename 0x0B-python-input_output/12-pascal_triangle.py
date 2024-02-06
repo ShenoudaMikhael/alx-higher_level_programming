@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """Pascal Triangle Module"""
 
+
 def pascal_triangle(num):
-    """pascal trinagle"""
+    """pascal trinagle function"""
 
     list1 = []
     for i in range(num):
