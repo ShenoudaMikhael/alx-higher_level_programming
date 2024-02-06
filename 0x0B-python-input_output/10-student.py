@@ -19,7 +19,7 @@ class Student:
             js = {
                 attrib: getattr(self, attrib)
                 for attrib in self.__dict__
-                if hasattr(self, attrib)
+                if attrib in attrs
             }
 
             return js
