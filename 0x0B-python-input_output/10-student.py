@@ -24,4 +24,4 @@ class Student:
 
             return a
 
-        return vars(self)
+        return self.__dict__
