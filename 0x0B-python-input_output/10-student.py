@@ -12,12 +12,10 @@ class Student:
 
     def to_json(self, attrs=None):
         if isinstance(attrs, list) and all(isinstance(att, str) for att in attrs):
-            js = {
+            return {
                 attrib: getattr(self, attrib)
                 for attrib in self.__dict__
                 if attrib in attrs
             }
-
-            return js
 
         return self.__dict__
