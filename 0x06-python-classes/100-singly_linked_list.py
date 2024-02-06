@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""singly list module node """
+"""singly list module node"""
 
 
 class Node:

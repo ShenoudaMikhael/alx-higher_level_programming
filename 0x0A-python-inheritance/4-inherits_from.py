@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""inherits from module """
+"""inherits from module"""
 
 
 def inherits_from(obj, a_class):
