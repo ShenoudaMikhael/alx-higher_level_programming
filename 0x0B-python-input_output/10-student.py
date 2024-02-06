@@ -11,6 +11,13 @@ class Student:
         self.age = age
 
     def to_json(self, attrs=None):
+        """
+        Return a JSON representation of the object
+        Args:
+            attrs (list): A list of attributes to include in the JSON representation.
+            Defaults to all attributes if not provided
+        """
+
         if isinstance(attrs, list) and all(isinstance(att, str) for att in attrs):
             return {
                 attrib: getattr(self, attrib)
