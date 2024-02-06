@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Add Item Module """
+"""Add Item Module """
 import sys
 import os
 
