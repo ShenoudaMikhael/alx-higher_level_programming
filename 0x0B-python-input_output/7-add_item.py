@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Add Item to Json file Module"""
+"""Module for saving to json"""
 import sys
 import os
 
