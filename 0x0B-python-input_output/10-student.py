@@ -16,12 +16,12 @@ class Student:
             and len(attrs) > 0
             and all(isinstance(att, str) for att in attrs)
         ):
-            a = {
+            js = {
                 attrib: getattr(self, attrib)
                 for attrib in self.__dict__
-                if attrib in attrs
+                if hasattr(self, attrib)
             }
 
-            return a
+            return js
 
         return self.__dict__
