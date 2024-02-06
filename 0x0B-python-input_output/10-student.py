@@ -17,7 +17,4 @@ class Student:
         """
         Return a JSON representation of the object
         """
-        if isinstance(attrs, list) and all(isinstance(att, str) for att in attrs):
-            return {}
-
         return self.__dict__
