@@ -25,7 +25,9 @@ class Student:
             Defaults to all attributes if not provided
         """
 
-        if isinstance(attrs, list) and all(isinstance(att, str) for att in attrs):
+        if (
+            isinstance(attrs, list) and
+            all(isinstance(att, str) for att in attrs)):
             return {
                 attrib: getattr(self, attrib)
                 for attrib in self.__dict__
