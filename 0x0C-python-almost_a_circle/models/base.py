@@ -2,7 +2,6 @@
 """Base Module"""
 import json
 import csv
-import turtle as t
 
 
 class Base:
