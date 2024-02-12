@@ -4,6 +4,7 @@ import json
 import csv
 import turtle as t
 
+
 class Base:
     """Base Geometry Class"""
 
@@ -59,7 +60,6 @@ class Base:
                 my_list.append(cls.create(**item))
         return my_list
 
-
     def save_to_file_csv(cls, list_objs):
         """Save objects to a file."""
 
@@ -75,7 +75,3 @@ class Base:
             for item in items:
                 my_list.append(cls.create(**item))
         return my_list
-    
-
-    def draw(list_rectangles, list_squares):
-        
