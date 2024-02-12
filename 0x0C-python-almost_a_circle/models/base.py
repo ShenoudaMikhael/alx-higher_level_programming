@@ -98,7 +98,7 @@ class Base:
             with open(
                 "{}.csv".format(cls.__name__),
                     "r", encoding="utf-8") as file:
-                items = csv.DictReader(file.read())
+                items = csv.DictReader(file)
                 my_list = [cls.create(**dict(row)) for row in items]
             return my_list
         except FileNotFoundError:
