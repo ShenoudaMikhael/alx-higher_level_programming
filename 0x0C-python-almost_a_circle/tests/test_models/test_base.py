@@ -7,19 +7,26 @@ from models.base import Base
 class TestBase(unittest.TestCase):
     """Class to represent the TestBase class"""
 
-    def test_base(self):
-        """Test Base Class"""
-        b1 = Base()
-        b2 = Base()
-        b3 = Base()
-        b4 = Base(12)
-        b5 = Base()
+    def test_init(self):
+        Base._Base__nb_objects = 0
+        obj1 = Base()
+        obj2 = Base(12)
+        self.assertEqual(obj1.id, 1)
+        self.assertEqual(obj2.id, 12)
 
-        self.assertEqual(b1.id, 1)
-        self.assertEqual(b2.id, 2)
-        self.assertEqual(b3.id, 3)
-        self.assertEqual(b4.id, 12)
-        self.assertEqual(b5.id, 4)
+    def test_from_json_string(self):
+        Base._Base__nb_objects = 0
+
+        json_string = '[{"id": 1}]'
+        obj_list = Base.from_json_string(json_string)
+        self.assertEqual(obj_list, [{"id": 1}])
+
+    def test_create(self):
+        Base._Base__nb_objects = 0
+
+        dictionary = {"id": 1}
+        obj = Base.create(**dictionary)
+        self.assertEqual(obj.id, 1)
 
 
 if __name__ == "__main__":
