@@ -13,6 +13,9 @@ class Square(Rectangle):
 
     @property
     def size(self):
+        """
+        Getter for the side length of the square.
+        """
         return self.width
 
     @size.setter
@@ -25,11 +28,17 @@ class Square(Rectangle):
         self.height = value
 
     def __str__(self) -> str:
+        """
+        String representation of a square object.
+        """
         return "[{}] ({}) {}/{} - {}".format(
             self.__class__.__name__, self.id, self.x, self.y, self.width
         )
 
     def update(self, *args, **kwargs):
+        """
+        Updates the position and/or size of the square.
+        """
         if args:
             i = args[0] if len(args) > 0 else None
             if i is not None:
