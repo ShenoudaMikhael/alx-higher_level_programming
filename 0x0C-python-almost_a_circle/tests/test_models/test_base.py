@@ -4,6 +4,7 @@ import unittest
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
+import json
 
 
 class TestBase(unittest.TestCase):
@@ -54,6 +55,16 @@ class TestBase(unittest.TestCase):
         self.assertEqual(square.size, 4)
         self.assertEqual(square.x, 5)
         self.assertEqual(square.y, 6)
+
+    def test_toJsonString(self):
+        """check to_json_string"""
+        Base._Base__nb_objects = 0
+        rect1 = Rectangle(10, 7, 2, 8)
+        rect_dict = rect1.to_dictionary()
+        rect_js = json.dumps([rect_dict])
+        
+        rect_tojs = rect1.to_json_string([rect_dict])
+        self.assertTrue(rect_js == rect_tojs)
 
 
 if __name__ == "__main__":
