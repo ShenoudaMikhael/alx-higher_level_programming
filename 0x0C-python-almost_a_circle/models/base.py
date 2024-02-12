@@ -78,11 +78,18 @@ class Base:
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """Save objects to a file."""
-
+         
         with open("{}.csv".format(cls.__name__),
                   "w+", encoding="utf-8") as file:
-            writer = csv.writer(file)
-            writer.writerows([ob.to_dictionary() for ob in list_objs])
+            field_names = []
+            if cls.__name__ == "Rectangle":
+                field_names = ['id', 'width', 'height', 'x', 'y']
+            if cls.__name__ == "Square":
+                field_names = ['id', 'size', 'x', 'y']
+            writer = csv.DictWriter(file, fieldnames=field_names)
+            writer.writeheader()
+            data = [cls.to_dictionary(item) for item in list_objs]
+            writer.writerows(data)
 
     @classmethod
     def load_from_file_csv(cls):
@@ -90,7 +97,10 @@ class Base:
         my_list = []
         with open("{}.csv".format(cls.__name__),
                   "r", encoding="utf-8") as file:
-            items = cls.from_json_string(file)
-            for item in items:
-                my_list.append(cls.create(**item))
+            q = file.read()
+
+            print(q)
+            items = csv.DictReader(file)
+            my_list = [cls.create(**dict(row)) for row in items]
+            
         return my_list
