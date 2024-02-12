@@ -67,6 +67,7 @@ class Base:
             writer = csv.writer(file)
             writer.writerows([ob.to_dictionary() for ob in list_objs])
 
+    @classmethod
     def load_from_file_csv(cls):
         """Load objects from a file."""
         my_list = []
