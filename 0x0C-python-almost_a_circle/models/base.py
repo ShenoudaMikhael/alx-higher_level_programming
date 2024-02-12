@@ -78,7 +78,6 @@ class Base:
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """Save objects to a file."""
-         
         with open("{}.csv".format(cls.__name__),
                   "w+", encoding="utf-8") as file:
             field_names = []
@@ -95,12 +94,15 @@ class Base:
     def load_from_file_csv(cls):
         """Load objects from a file."""
         my_list = []
-        with open("{}.csv".format(cls.__name__),
-                  "r", encoding="utf-8") as file:
-            q = file.read()
+        try:
+            with open(
+                "{}.csv".format(cls.__name__),
+                    "r", encoding="utf-8") as file:
+                q = file.read()
 
-            print(q)
-            items = csv.DictReader(file)
-            my_list = [cls.create(**dict(row)) for row in items]
-            
-        return my_list
+                print(q)
+                items = csv.DictReader(file)
+                my_list = [cls.create(**dict(row)) for row in items]
+            return my_list
+        except FileNotFoundError:
+            return []
