@@ -64,7 +64,7 @@ class Base:
         my_list = []
         with open("{}.json".format(cls.__name__),
                   "r", encoding="utf-8") as file:
-            items = cls.from_json_string(file)
+            items = cls.from_json_string(file.read())
             for item in items:
                 my_list.append(cls.create(**item))
         return my_list
