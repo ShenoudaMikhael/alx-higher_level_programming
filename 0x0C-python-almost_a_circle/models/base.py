@@ -29,8 +29,11 @@ class Base:
 
         with open("{}.json".format(cls.__name__),
                   "w+", encoding="utf-8") as file:
-            file.write(Base.to_json_string(
-                [ob.to_dictionary() for ob in list_objs]))
+            if list_objs is not None:
+                file.write(Base.to_json_string(
+                    [ob.to_dictionary() for ob in list_objs]))
+            else:
+                file.write(Base.to_json_string([]))
 
     @staticmethod
     def from_json_string(json_string):
