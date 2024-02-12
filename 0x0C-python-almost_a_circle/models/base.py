@@ -25,10 +25,8 @@ class Base:
     def save_to_file(cls, list_objs):
         """Save objects to a file."""
 
-        with open("{}.json".format(cls.__name__),
-                  "w+", encoding="utf-8") as file:
-            file.write(Base.to_json_string([ob.to_dictionary()
-                                            for ob in list_objs]))
+        with open("{}.json".format(cls.__name__), "w+", encoding="utf-8") as file:
+            file.write(Base.to_json_string([ob.to_dictionary() for ob in list_objs]))
 
     @staticmethod
     def from_json_string(json_string):
@@ -55,13 +53,13 @@ class Base:
     def load_from_file(cls):
         """Load objects from a file."""
         my_list = []
-        with open("{}.json".format(cls.__name__),
-                  "r", encoding="utf-8") as file:
+        with open("{}.json".format(cls.__name__), "r", encoding="utf-8") as file:
             items = cls.from_json_string(file)
             for item in items:
                 my_list.append(cls.create(**item))
         return my_list
 
+    @classmethod
     def save_to_file_csv(cls, list_objs):
         """Save objects to a file."""
 
