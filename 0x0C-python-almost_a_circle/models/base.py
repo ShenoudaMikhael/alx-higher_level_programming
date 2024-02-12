@@ -62,12 +62,15 @@ class Base:
     def load_from_file(cls):
         """Load objects from a file."""
         my_list = []
-        with open("{}.json".format(cls.__name__),
-                  "r", encoding="utf-8") as file:
-            items = cls.from_json_string(file.read())
-            for item in items:
-                my_list.append(cls.create(**item))
-        return my_list
+        try:
+            with open(
+                    "{}.json".format(cls.__name__),
+                    "r", encoding="utf-8") as file:
+                items = cls.from_json_string(file.read())
+                for item in items:
+                    my_list.append(cls.create(**item))
+        except FileNotFoundError:
+            return my_list
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
