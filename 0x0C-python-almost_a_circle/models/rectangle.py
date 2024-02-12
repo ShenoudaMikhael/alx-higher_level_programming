@@ -93,9 +93,11 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
+        """Return the area of this rectangle."""
         return self.height * self.width
 
     def display(self):
+        """Display the rectangle's information."""
         for _y in range(self.y):
             print("")
         for _ in range(self.height):
@@ -107,13 +109,17 @@ class Rectangle(Base):
             print("")
 
     def __str__(self) -> str:
+        """
+        Return a string representation of the object.
+        """
+
         return "[{}] ({}) {}/{} - {}/{}".format(
-            self.__class__.__name__, self.id,
-            self.x, self.y, self.width, self.height
+            self.__class__.__name__,
+            self.id, self.x, self.y, self.width, self.height
         )
 
     def update(self, *args, **kwargs):
-        print(kwargs)
+        """Update properties using keyword arguments."""
         if args:
             i = args[0] if len(args) > 0 else None
             if i is not None:
