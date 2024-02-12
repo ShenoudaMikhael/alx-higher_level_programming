@@ -51,7 +51,7 @@ class Base:
 
         if "size" in dictionary:
             sqr = Square(size=1)
-            sqr.update(*dictionary)
+            sqr.update(**dictionary)
             return sqr
 
         rct = Rectangle(width=1, height=1)
