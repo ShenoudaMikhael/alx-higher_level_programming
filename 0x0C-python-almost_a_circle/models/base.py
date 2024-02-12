@@ -67,8 +67,11 @@ class Base:
                     "{}.json".format(cls.__name__),
                     "r", encoding="utf-8") as file:
                 items = cls.from_json_string(file.read())
+                if not items:
+                    return my_list
                 for item in items:
                     my_list.append(cls.create(**item))
+                return my_list
         except FileNotFoundError:
             return my_list
 
