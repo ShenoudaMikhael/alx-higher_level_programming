@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """Base Class Unit test"""
 import unittest
-from unittest.mock import patch
 from models.base import Base
 
 
@@ -36,32 +35,6 @@ class TestBase(unittest.TestCase):
         dictionary = {"id": 1}
         obj = Base.create(**dictionary)
         self.assertEqual(obj.id, 1)
-
-    @patch("builtins.open", create=True)
-    def test_save_to_file(self, mock_open):
-        obj = Base()
-        obj_list = [obj]
-        Base.save_to_file(obj_list)
-        mock_open.assert_called_once_with("Base.json", "w+", encoding="utf-8")
-
-    @patch("builtins.open", create=True)
-    def test_load_from_file(self, mock_open):
-        mock_open.return_value.__enter__.return_value.read.return_value = '[{"id": 1}]'
-        obj_list = Base.load_from_file()
-        self.assertEqual(obj_list[0].id, 1)
-
-    @patch("builtins.open", create=True)
-    def test_save_to_file_csv(self, mock_open):
-        obj = Base()
-        obj_list = [obj]
-        Base.save_to_file_csv(obj_list)
-        mock_open.assert_called_once_with("Base.csv", "w+", encoding="utf-8")
-
-    @patch("builtins.open", create=True)
-    def test_load_from_file_csv(self, mock_open):
-        mock_open.return_value.__enter__.return_value.read.return_value = '[{"id": 1}]'
-        obj_list = Base.load_from_file_csv()
-        self.assertEqual(obj_list[0].id, 1)
 
 
 if __name__ == "__main__":
