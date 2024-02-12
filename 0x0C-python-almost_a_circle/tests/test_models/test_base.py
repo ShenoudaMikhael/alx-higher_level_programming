@@ -10,9 +10,15 @@ class TestBase(unittest.TestCase):
     def test_init(self):
         Base._Base__nb_objects = 0
         obj1 = Base()
-        obj2 = Base(12)
+        obj2 = Base()
+        obj3 = Base()
+        obj4 = Base(12)
+        obj5 = Base("A")
         self.assertEqual(obj1.id, 1)
-        self.assertEqual(obj2.id, 12)
+        self.assertEqual(obj2.id, 2)
+        self.assertEqual(obj3.id, 3)
+        self.assertEqual(obj4.id, 12)
+        self.assertEqual(obj5.id, "A")
 
     def test_from_json_string(self):
         Base._Base__nb_objects = 0
