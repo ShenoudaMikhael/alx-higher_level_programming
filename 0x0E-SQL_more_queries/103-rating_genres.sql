@@ -1,6 +1,6 @@
 --script that lists all shows by rate
 --script that lists all shows from hbtn_0d_tvshows_rate by their rating.
-SELECT tv_genres.name, SUM(tv_show_ratings.rate) AS rating
+SELECT tv_genres.name AS `name`, SUM(tv_show_ratings.rate) AS `rating`
 FROM tv_shows
 JOIN tv_show_ratings ON tv_shows.id = tv_show_ratings.show_id
 JOIN tv_show_genres ON tv_shows.id = tv_show_genres.show_id
