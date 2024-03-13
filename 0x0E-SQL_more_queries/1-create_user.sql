@@ -1,5 +1,5 @@
 -- creates the MySQL server user 
 -- Write a script that creates the MySQL server user user_0d_1. 
 CREATE USER IF NOT EXIST 'user_0d_1'@'%' IDENTIFIED BY 'user_0d_1_pwd';
-GRANT ALL PRIVILEGES ON *.* TO 'user_0d_1'@'%' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'user_0d_1'@'%';
 FLUSH PRIVILEGES;
