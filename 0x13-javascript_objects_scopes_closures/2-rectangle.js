@@ -2,8 +2,8 @@
 class Rectangle {
   width;
   height;
-  constructor (w, h) {
-    if (w <= 0 || h <= 0 || !w || !h) { return; }
+  constructor(w, h) {
+    if (!w || !h || (w <= 0 || h <= 0)) { return; }
     this.width = w;
     this.height = h;
   }
