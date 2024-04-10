@@ -16,12 +16,12 @@ if __name__ == "__main__":
     cur = conn.cursor()
     cur.execute(
         """SELECT cities.name FROM cities
-        INNER JOIN states on cities.state_id = states.id where states.name = %s
+        JOIN states ON cities.state_id = states.id WHERE states.name = %s
         ORDER BY cities.id ASC""",
         (sys.argv[4],),
     )  # HERE I have to know SQL to grab all states in my database
     query_rows = cur.fetchall()
     for row in query_rows:
-        print(row[0], end="\n" if query_rows[-1] == row else ", ")
+        print(row[0], end=None if query_rows[-1] == row else ", ")
     cur.close()
     conn.close()
