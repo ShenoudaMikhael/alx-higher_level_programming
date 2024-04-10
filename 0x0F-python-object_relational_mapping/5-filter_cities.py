@@ -16,7 +16,7 @@ if __name__ == "__main__":
     cur = conn.cursor()
     cur.execute(
         """SELECT cities.name FROM cities
-        join states on cities.state_id = states.id where states.name = %s
+        INNER JOIN states on cities.state_id = states.id where states.name = %s
         ORDER BY cities.id ASC""",
         (sys.argv[4],),
     )  # HERE I have to know SQL to grab all states in my database
