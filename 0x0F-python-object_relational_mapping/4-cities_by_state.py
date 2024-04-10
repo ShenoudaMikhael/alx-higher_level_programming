@@ -15,7 +15,8 @@ if __name__ == "__main__":
     )
     cur = conn.cursor()
     cur.execute(
-        """SELECT id, name FROM cities
+        """SELECT cities.id, cities.name, states.name FROM cities
+        join states on cities.state_id = states.id
         ORDER BY id ASC""",
     )  # HERE I have to know SQL to grab all states in my database
     query_rows = cur.fetchall()
