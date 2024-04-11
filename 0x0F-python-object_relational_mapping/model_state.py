@@ -1,3 +1,4 @@
+#!/usr/bin/python
 """Model State Module"""
 
 from sqlalchemy import Column, Integer, String
