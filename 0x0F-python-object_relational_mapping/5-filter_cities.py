@@ -21,7 +21,6 @@ if __name__ == "__main__":
         (sys.argv[4],),
     )  # HERE I have to know SQL to grab all states in my database
     query_rows = cur.fetchall()
-    for row in query_rows:
-        print(row[0], end=None if query_rows[-1] == row else ", ")
+    print(", ".join([x[0] for x in query_rows]))
     cur.close()
     conn.close()
