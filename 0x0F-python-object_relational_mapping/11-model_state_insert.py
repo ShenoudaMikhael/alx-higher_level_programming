@@ -24,3 +24,4 @@ if __name__ == "__main__":
     lousiana.name = "Louisiana"
     Session.add(lousiana)
     Session.commit()
+    print(lousiana.id)
