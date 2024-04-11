@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """Model State Module"""
 
 from sqlalchemy import Column, Integer, String
@@ -8,7 +8,7 @@ Base = declarative_base()
 
 
 class State(Base):
-    """States Model"""
+    """States Class Model"""
 
     __tablename__ = "states"
     id = Column(Integer, primary_key=True, autoincrement=True)
