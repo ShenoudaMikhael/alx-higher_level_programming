@@ -20,8 +20,10 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     Session = Session()
-    states = Session.query(State).filter_by(
-        name=sys.argv[4]).order_by(State.id)
+    states = (
+        Session.query(State).filter(
+            State.name == sys.argv[4]).order_by(State.id)
+    )
     if states:
         for state in states:
             print("{}".format(state.id))
