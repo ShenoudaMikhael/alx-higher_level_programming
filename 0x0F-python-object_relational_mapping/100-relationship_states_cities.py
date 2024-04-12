@@ -29,4 +29,3 @@ if __name__ == "__main__":
     california.cities = [san_francisco]
     Session.add(california)
     Session.commit()
-    print(california.id)
