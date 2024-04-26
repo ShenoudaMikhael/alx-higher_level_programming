@@ -2,16 +2,21 @@
 """find peak int module"""
 
 
+def div(list_of_ints, low, high):
+    """div the array and search"""
+
+    mid = int((high + low) / 2)
+    if list_of_ints[mid - 1] <= list_of_ints[mid] >= list_of_ints[mid + 1]:
+        return list_of_ints[mid]
+    elif list_of_ints[mid] > list_of_ints[mid + 1]:
+        return div(list_of_ints, low, mid - 1)
+    elif list_of_ints[mid] < list_of_ints[mid + 1]:
+        return div(list_of_ints, mid + 1, high)
+
+
 def find_peak(list_of_integers):
-    """find peak int"""
+    """Find peak of a list"""
+
     if not list_of_integers:
         return None
-    temp = list_of_integers[len(list_of_integers) - 1]
-
-    for i in range(int(len(list_of_integers) / 2)):
-
-        tmax = max(
-            list_of_integers[i], list_of_integers[len(list_of_integers) - 1 - i]
-        )
-        temp = tmax if tmax > temp else temp
-    return temp
+    return div(list_of_integers, 0, len(list_of_integers) - 1)
