@@ -4,8 +4,4 @@
 
 def find_peak(list_of_integers):
     """find peak int"""
-    temp = None
-    for i in (list_of_integers):
-        if not temp or temp < i:
-            temp = i
-    return temp
+    return max(list_of_integers)
