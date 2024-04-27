@@ -18,4 +18,3 @@ if __name__ == "__main__":
         print(response.json()["id"])
     else:
         print(None)
-
