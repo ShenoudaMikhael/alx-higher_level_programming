@@ -18,4 +18,4 @@ if __name__ == "__main__":
     a = response.json()
 
     for i in range(10):
-        print("{} {}".format(a[i]["sha"], a[i]["commit"]["author"]["name"]))
+        print("{}: {}".format(a[i]["sha"], a[i]["commit"]["author"]["name"]))
