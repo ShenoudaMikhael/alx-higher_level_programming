@@ -16,6 +16,10 @@ if __name__ == "__main__":
 
     response = requests.get(url, headers=headers)
     a = response.json()
+    try:
 
-    for i in range(10):
-        print("{}: {}".format(a[i]["sha"], a[i]["commit"]["author"]["name"]))
+        for i in range(10):
+            print("{}: {}".format(
+                a[i]["sha"], a[i]["commit"]["author"]["name"]))
+    except Exception:
+        pass
