@@ -10,8 +10,11 @@ if __name__ == "__main__":
         data={"q": sys.argv[1] if len(sys.argv) > 1 else ""},
         timeout=30,
     ) as r:
-
-        res = r.json()
-
-        if res != {}:
-            print("[{}] {}".format(res["id"], res["name"]))
+        try:
+            res = r.json()
+            if res == {}:
+                print("No result")
+            elif res != {}:
+                print("[{}] {}".format(res["id"], res["name"]))
+        except Exception:
+            print("Not a valid JSON")
