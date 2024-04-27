@@ -2,10 +2,25 @@
 """find peak int module"""
 
 
-def find_peak(arr):
+def find_peak(list_of_integers):
     """find peak int"""
-    n = len(arr)
-    for i in range(1, n - 1):
-        if arr[i] > arr[i - 1] and arr[i] > arr[i + 1]:
-            return arr[i]
-    return None
+    if not list_of_integers:
+        return None
+
+    n = len(list_of_integers)
+
+    if n == 1:
+        return list_of_integers[0]
+    elif n == 2:
+        return max(list_of_integers)
+    else:
+        mid = n // 2
+        if (
+            list_of_integers[mid] > list_of_integers[mid - 1]
+            and list_of_integers[mid] > list_of_integers[mid + 1]
+        ):
+            return list_of_integers[mid]
+        elif list_of_integers[mid] < list_of_integers[mid + 1]:
+            return find_peak(list_of_integers[mid:])
+        else:
+            return find_peak(list_of_integers[:mid])
