@@ -9,7 +9,6 @@ request(process.argv[2], (err, response, body) => {
   let k = JSON.parse(body);
   for (let index = 0; index < k.length; index++) {
     const element = k[index];
-    console.log(element)
     if (element.completed === true) {
       if (q.hasOwnProperty(element.userId)) {
         q[element.userId] = q[element.userId] + 1
