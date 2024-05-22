@@ -7,11 +7,10 @@ request(process.argv[2], (err, response, body) => {
   }
   let count = 0;
   const b = JSON.parse(body);
-  const cid = 18;
   b.results.forEach(element => {
     const movie = element;
     movie.characters.forEach(character => {
-      if (character.endsWith('/18/') ) {
+      if (character.endsWith('/18/')) {
         count++;
       }
     });
