@@ -11,8 +11,7 @@ request(process.argv[2], (err, response, body) => {
   b.results.forEach(element => {
     const movie = element;
     movie.characters.forEach(character => {
-      const aa = character.split('/');
-      if (aa[aa.length - 2] === cid) {
+      if (character.endsWith('/18/') ) {
         count++;
       }
     });
